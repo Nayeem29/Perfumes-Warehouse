@@ -9,16 +9,16 @@ const Header = () => {
   ];
   const navLinkStyles = ({ isActive }) => {
     return {
-      color: isActive ? 'red' : 'black',
+      color: isActive ? 'orange' : 'black',
       fontSize: isActive ? '20px' : '20px',
       fontWeight: isActive ? 'bold' : 'normal'
     }
   }
   return (
-    <div>
+    <div className='my-4'>
       <nav className='flex items-center justify-between'>
         <div>
-          <p className='text-3xl font-semibold uppercase text-amber-400'>Simplex Perfumers</p>
+          <p className='text-3xl font-semibold uppercase text-amber-400 ml-4'>Simplex Perfumer</p>
         </div>
         <div>
           <nav>
