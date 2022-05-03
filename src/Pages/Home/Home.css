@@ -4,6 +4,9 @@
   background-size: cover;
 }
 
-input:focus {
+.subscriber input:focus {
   outline: none !important;
+  outline-offset: 0;
+  box-shadow: none;
+  border: 2px solid #e9cbcb;
 }

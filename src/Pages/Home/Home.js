@@ -24,15 +24,16 @@ const Home = () => {
       <section>
         <Support />
       </section>
-      <div className='md:flex md:items-center md:justify-center mb-12 bg-green-200 py-12'>
-        <p className='text-2xl font-bold mx-8'>Sign Up to Newsletter</p>
-        <p className='text-2xl font-bold mx-8 my-auto'><small className='text-sm font-thin'>get latest information on Events, Sales and Offers</small> <br />
+      <div className='sm:my-8 md:flex md:items-center md:justify-center mb-12 bg-green-200 py-12'>
+        <p className='my-4 text-2xl font-bold mx-8'>Sign Up to Newsletter</p>
+        <p className='sm:my-8 text-2xl font-bold mx-8 md:my-auto'><small className='text-sm font-thin'>get latest information on Events, Sales and Offers</small> <br />
           Receive $10 coupon for 10+ order
         </p>
-        <div className='relative'>
-          <input className='outline-none outline-0 focus:outline-none outline-offset-0 rounded-3xl ml-5 border-2 border-pink-300' type="text" size='40' />
-          <button className='absolute right-0 font-bold bg-pink-300 h-full rounded-3xl px-5'>Subscribe</button>
+        <div className='relative subscriber my-8 md:my-auto'>
+          <input className='rounded-3xl ml-5 px-6 py-2 border-pink-300' type="text" placeholder='Email' size='40' />
+          <button className='absolute right-0 font-bold bg-pink-300 h-full rounded-r-3xl px-5'>Subscribe</button>
         </div>
+
       </div>
     </div>
   );
