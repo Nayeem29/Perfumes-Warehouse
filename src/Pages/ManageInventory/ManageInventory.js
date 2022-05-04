@@ -28,16 +28,16 @@ const ManageInventory = () => {
           <div>
             <p className='text-3xl font-semibold text-center'>Add a New Perfume here</p>
             <form className='my-16'>
-              <input className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="name" id="" placeholder='Product Name' size='40' />
+              <input className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="name" id="" placeholder='Product Name' size='40' required />
               <br />
-              <input className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="photo" id="" placeholder='Photo URL' size='40' />
+              <input className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="photo" id="" placeholder='Photo URL' size='40' required />
               <br />
-              <input className='my-3 px-4 py-2 border-green-200 border-2' type="number" name="price" id="" placeholder='Product Price' size='40' />
+              <input className='my-3 px-4 py-2 border-green-200 border-2' type="number" name="price" id="" placeholder='Product Price' size='40' required />
               <br />
-              <input className='my-3 px-4 py-2 border-green-200 border-2' type="number" name="quantity" id="" placeholder='Product Quantity' size='40' />
+              <input className='my-3 px-4 py-2 border-green-200 border-2' type="number" name="quantity" id="" placeholder='Product Quantity' size='40' required />
               <br />
-              <input className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="supplier" id="" placeholder='Supplier Name' size='40' />
-              <textarea className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="descripton" id="" placeholder='Description' size='80' />
+              <input className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="supplier" id="" placeholder='Supplier Name' size='40' required />
+              <textarea className='my-3 px-4 py-2 border-green-200 border-2' type="text" name="descripton" id="" placeholder='Description' size='80' required />
               <br />
               <input className='bg-green-200 text-xl font-bold px-4 rounded-sm my-5 cursor-pointer py-2 mx-auto block hover:bg-pink-300' type="button" value="Add Product" />
             </form>

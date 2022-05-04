@@ -1,9 +1,87 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import Spinner from '../../SharedComponent/Spinner';
+// import ToastSuccess from '../../SharedComponent/ToastSuccess';
+import auth from '../../_firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import SocialLognin from './SocialLogin/SocialLognin';
 
 const Login = () => {
-  return (
-    <div>
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
+  const emailRef = useRef('');
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const navigate = useNavigate();
+  let errorElem;
 
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    signInWithEmailAndPassword(email, password);
+  }
+  if (user) {
+    navigate('/');
+  }
+  if (loading) {
+    return <Spinner />;
+  }
+  if (error) {
+    errorElem = <div>
+      <p>Error:{error.message}</p>
+    </div>
+  }
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    console.log(email);
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast('password reset');
+    } else {
+      console.log('email not found');
+    }
+    e.target.reset();
+  }
+  return (
+    <div className='my-16'>
+      <p className='text-center text-3xl font-bold'>Please Login to Perfumers Warehouse</p>
+      <div className='detail-form flex items-center justify-center my-12'>
+        <form onSubmit={handleSubmitForm}>
+          <input className='my-3 px-4 py-2 border-green-200 border-2'
+            type="email" name='email' placeholder='Your Email' size='60' ref={emailRef} required
+          />
+          <br />
+          <input className='my-3 px-4 py-2 border-green-200 border-2'
+            type="password" name='password' placeholder='Password' size='60' required
+          />
+          <br />
+          <p className='text-center text-green-500'
+          > <small className='text-red-900 mr-1'>Forget Password?</small>
+            <button
+              onClick={handleResetPassword}
+            >Reset</button></p>
+          <ToastContainer />
+          {
+            error && errorElem
+          }
+
+          <button
+            className='bg-green-200 text-xl font-bold px-8 rounded-sm my-5 cursor-pointer py-2 mx-auto block hover:bg-pink-300'>Login</button>
+          <p className='my-16 text-center'>
+            <SocialLognin />
+            <small className='text-sm'>
+              Not Registered yet?
+            </small>
+            <Link to='/register' className='text-pink-600 pl-2 font-medium mt-3'>signup</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
