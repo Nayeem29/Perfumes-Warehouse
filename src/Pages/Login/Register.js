@@ -5,6 +5,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import Spinner from '../../SharedComponent/Spinner';
 import SocialLognin from './SocialLogin/SocialLognin';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
@@ -15,7 +17,7 @@ const Register = () => {
     user,
     loading,
     error,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const handleSubmitForm = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -26,6 +28,7 @@ const Register = () => {
     if (password === confirmPass) {
       createUserWithEmailAndPassword(email, password);
     }
+    toast('Check email for verify');
   }
   if (user) {
     navigate('/login');
@@ -76,6 +79,7 @@ const Register = () => {
           {
             error && errorElem
           }
+          <ToastContainer />
           <button disabled={!agree}
             className='bg-green-200 text-xl font-bold px-4 rounded-sm my-5 cursor-pointer py-2 mx-auto block hover:bg-pink-300'>Registration</button>
           <SocialLognin />

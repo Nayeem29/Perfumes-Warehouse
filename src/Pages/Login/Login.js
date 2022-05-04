@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Spinner from '../../SharedComponent/Spinner';
 // import ToastSuccess from '../../SharedComponent/ToastSuccess';
 import auth from '../../_firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import SocialLognin from './SocialLogin/SocialLognin';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [
@@ -18,6 +19,8 @@ const Login = () => {
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   let errorElem;
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -26,7 +29,7 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   }
   if (user) {
-    navigate('/');
+    navigate(from, { replace: true });
   }
   if (loading) {
     return <Spinner />;
@@ -42,9 +45,9 @@ const Login = () => {
     console.log(email);
     if (email) {
       await sendPasswordResetEmail(email);
-      toast('password reset');
+      toast('password reset email sent');
     } else {
-      console.log('email not found');
+      toast('email not found');
     }
     e.target.reset();
   }
