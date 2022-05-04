@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaShippingFast } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa";
-import serviceIcon from '../../../Assests/serviceIcon.png'
+import serviceIcon from '../../../Assests/serviceIcon.png';
 
 const Support = () => {
   return (

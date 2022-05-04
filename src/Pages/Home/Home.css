@@ -4,7 +4,14 @@
   background-size: cover;
 }
 
-.subscriber input:focus {
+.subscriber input:focus textarea {
+  outline: none !important;
+  outline-offset: 0;
+  box-shadow: none;
+  border: 2px solid #e9cbcb;
+}
+
+.detail-form input:focus textarea:focus {
   outline: none !important;
   outline-offset: 0;
   box-shadow: none;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useProducts from '../../CustomHooks/useProducts';
 import './Home.css';
 import Perfume from './Perfume/Perfume';
@@ -6,6 +7,7 @@ import Support from './Support/Support';
 
 const Home = () => {
   const [products] = useProducts();
+  const navigate = useNavigate();
   return (
     <div>
       <section className='banner h-min font-bold uppercase text-center py-4'>
@@ -14,13 +16,18 @@ const Home = () => {
         <button className='py-8 mb-6 md:text-4xl font-semibold sm:text-xl'>Learn more...</button>
       </section>
       <p className='my-8 text-3xl text-center font-bold'>Unique Perfumes</p>
-      <section className='grid grid-cols-1 md:grid-cols-3 gap-5 mb-12'>
+      <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12'>
         {
           products.slice(0, 6).map(product => <Perfume
             key={product._id} product={product}
           ></Perfume>)
         }
       </section>
+      <div className='my-12'>
+        <button
+          onClick={() => navigate('/manageInventory')}
+          className='w-1/3 text-2xl block mx-auto font-bold rounded-2xl bg-pink-300 py-3 text-black shadow-green-300 hover:bg-green-200'>Manage Inventory</button>
+      </div>
       <section>
         <Support />
       </section>
@@ -33,7 +40,6 @@ const Home = () => {
           <input className='rounded-3xl ml-5 px-6 py-2 border-pink-300' type="text" placeholder='Email' size='40' />
           <button className='absolute right-0 font-bold bg-pink-300 h-full rounded-r-3xl px-5'>Subscribe</button>
         </div>
-
       </div>
     </div>
   );

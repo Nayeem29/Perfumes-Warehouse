@@ -10,7 +10,7 @@ const Perfume = ({ product }) => {
         <p className='py-2'>Price: ${product.price}</p>
         <p className='py-2'>Available: {product.quantity}</p>
         <p className='py-2'>Supplier: {product.supplier}</p>
-        <p className='py-2 text-sm font-light px-3'>{product.about}</p>
+        <p className='py-2 text-sm font-light px-3'>{product.about > 100 ? (product.about).slice(0, 100) + '...' : product.about}</p>
       </div>
       <button className='text-center w-full rounded-b-xl py-3 bg-pink-300 text-black text-3xl font-semibold absolute bottom-0'>update for manage</button>
     </div>
