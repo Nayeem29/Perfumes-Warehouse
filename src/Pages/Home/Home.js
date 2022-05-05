@@ -8,18 +8,22 @@ import Support from './Support/Support';
 const Home = () => {
   const [products] = useProducts();
   const navigate = useNavigate();
+  const handleProductInventory = (id) => {
+    navigate(`/inventory/${id}`);
+  }
   return (
     <div>
-      <section className='banner h-min font-bold uppercase text-center py-4'>
+      <section className='banner h-max font-bold uppercase text-center py-4'>
         <p className='py-8 mt-12 md:text-6xl sm:text-3xl'>BEST PERFUMES IN COUNTRY</p>
         <p className='text-sm font-medium mx-32 my-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae consequatur voluptatibus earum dolore dolorum magnam porro dolor dicta vel, sunt minus totam eveniet veritatis deserunt expedita eligendi cumque asperiores pariatur? Accusamus quia quibusdam minus asperiores repudiandae cum maiores. Fugit, praesentium.</p>
         <button className='py-8 mb-6 md:text-4xl font-semibold sm:text-xl'>Learn more...</button>
       </section>
-      <p className='my-8 text-3xl text-center font-bold'>Unique Perfumes</p>
+      <p className='my-12 ml-16 text-3xl text-start font-bold'>Featured Products</p>
       <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12'>
         {
           products.slice(0, 6).map(product => <Perfume
             key={product._id} product={product}
+            handleProductInventory={handleProductInventory}
           ></Perfume>)
         }
       </section>

@@ -17,7 +17,7 @@ const Header = () => {
   ];
   const navLinkStyles = ({ isActive }) => {
     return {
-      color: isActive ? 'orange' : 'black',
+      color: isActive ? 'pink' : 'black',
       fontSize: isActive ? '20px' : '20px',
       fontWeight: isActive ? 'bold' : 'normal'
     }
@@ -33,10 +33,10 @@ const Header = () => {
     return <Spinner />
   }
   return (
-    <div className={`my-4 ${open ? 'h-44' : 'h-14'}`}>
+    <div className={`mb-4 sticky top-0 z-10 bg-white ${open ? 'h-48' : 'h-14'}`}>
       <nav className='flex items-center justify-between'>
         <div>
-          <p className='text-3xl font-semibold uppercase text-amber-400 ml-4'>Simplex Perfumer</p>
+          <p className='text-3xl font-semibold uppercase my-auto text-pink-400 ml-4'>Simplex Perfumer</p>
         </div>
         <div>
           <nav className='md:flex items-center md:justify-end py-4 md:px-10 px-7'>
@@ -55,7 +55,7 @@ const Header = () => {
                   <NavLink style={navLinkStyles} className='px-5' to='/login'><FaSignInAlt className='text-xl text-black inline' /></NavLink>
               }
             </ul>
-            <div onClick={() => setOpen(!open)} className='text-2xl absolute right-8 top-6 cursor-pointer md:hidden'>
+            <div onClick={() => setOpen(!open)} className='text-2xl absolute right-8 top-5 cursor-pointer md:hidden'>
               {
                 open ?
                   <FaTimes />

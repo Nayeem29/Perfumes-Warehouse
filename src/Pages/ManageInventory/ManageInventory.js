@@ -9,15 +9,20 @@ const ManageInventory = () => {
   const handleRemoveBtn = (id) => {
 
   }
+  const handleUpdateBtn = (id) => {
+
+  }
   return (
     <div>
       <div className='grid grid-cols-3 gap-4 my-12'>
         <div className='col-span-2 my-12'>
-          <div className='grid grid-cols-1 md:grid-cols-2 my-8'>
+          <div className='grid grid-cols-1 my-8'>
             {
               products.map(product =>
                 <TabularProducts
-                  key={product._id} product={product} handleRemoveBtn={handleRemoveBtn}
+                  key={product._id} product={product}
+                  handleUpdateBtn={handleUpdateBtn}
+                  handleRemoveBtn={handleRemoveBtn}
                 >{
                   }</TabularProducts>
               )
