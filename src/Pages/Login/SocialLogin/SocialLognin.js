@@ -17,16 +17,18 @@ const SocialLognin = () => {
     <Spinner />
   }
   if (error) {
-    errorELem = <div>
-      <p>Error:{error.message}</p>
-    </div>
+    errorELem =
+      <p className='text-red-600'>Error:{error.message}</p>
+
   }
   return (
     <div>
       <div className='flex items-center justify-center my-6'>
-        <div className='h-1 w-1/2 bg-pink-400'></div>
+        {/* <hr className='h-1 w-1/2 bg-pink-400'></hr> */}
+        <hr className='h-1 w-1/2 bg-pink-400' />
         <p className='px-2'>or</p>
-        <div className='h-1 w-1/2 bg-pink-400'></div>
+        <hr className='h-1 w-1/2 bg-pink-400' />
+        {/* <hr className='h-1 w-1/2 bg-pink-400'></hr> */}
       </div>
       {
         error && errorELem

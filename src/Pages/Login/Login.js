@@ -35,9 +35,9 @@ const Login = () => {
     return <Spinner />;
   }
   if (error) {
-    errorElem = <div>
-      <p>Error:{error.message}</p>
-    </div>
+    errorElem =
+      <p className='text-red-400'>Error:{error.message}</p>
+
   }
   const handleResetPassword = async (e) => {
     e.preventDefault();
@@ -57,11 +57,11 @@ const Login = () => {
       <div className='detail-form flex items-center justify-center my-12'>
         <form onSubmit={handleSubmitForm}>
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="email" name='email' placeholder='Your Email' size='60' ref={emailRef} required
+            type="email" name='email' placeholder='Your Email' size='40' ref={emailRef} required
           />
           <br />
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="password" name='password' placeholder='Password' size='60' required
+            type="password" name='password' placeholder='Password' size='40' required
           />
           <br />
           <p className='text-center text-green-500'
@@ -81,7 +81,7 @@ const Login = () => {
             <small className='text-sm'>
               Not Registered yet?
             </small>
-            <Link to='/register' className='text-pink-600 pl-2 font-medium mt-3'>signup</Link>
+            <Link to='/register' className='text-pink-400 pl-2 font-medium mt-3'>signup</Link>
           </p>
         </form>
       </div>

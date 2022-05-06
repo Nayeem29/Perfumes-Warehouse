@@ -7,6 +7,7 @@ import Register from "./Pages/Login/Register";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 import MyProducts from "./Pages/MyProducts/MyProducts";
+import NotFound from "./Pages/NotFound/NotFound";
 import Footer from "./SharedComponent/Footer";
 import Header from "./SharedComponent/Header";
 
@@ -44,6 +45,7 @@ function App() {
         ></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </div>

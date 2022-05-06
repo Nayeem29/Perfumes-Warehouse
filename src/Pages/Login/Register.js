@@ -20,23 +20,23 @@ const Register = () => {
   ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPass = e.target.confirmPassword.value;
     e.target.reset();
     if (password === confirmPass) {
       createUserWithEmailAndPassword(email, password);
+      toast('Check email for verify');
     }
-    toast('Check email for verify');
   }
   if (user) {
     navigate('/login');
   }
   if (error) {
-    errorElem = <div>
-      <p>Error:{error.message}</p>
-    </div>
+    errorElem =
+      <p className='text-red-600'>Error:{error.message}</p>
+
   }
   if (loading) {
     <Spinner />

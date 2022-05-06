@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import useProducts from '../../CustomHooks/useProducts';
 import auth from '../../_firebase.init';
 import Products from './Products';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const MyProducts = () => {
@@ -37,7 +38,7 @@ const MyProducts = () => {
       <div>
         {
           userProduct.map(product =>
-            <Products key={product._id}
+            <Products key={uuidv4()}
               handleRemoveItem={handleRemoveItem}
               product={product}></Products>)
         }
