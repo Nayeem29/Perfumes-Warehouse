@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
+import AddProduct from "./Pages/AddProduct/AddProduct";
 import Home from "./Pages/Home/Home";
 import Inventory from "./Pages/Home/Inventory/Inventory";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
+import MyProducts from "./Pages/MyProducts/MyProducts";
 import Footer from "./SharedComponent/Footer";
 import Header from "./SharedComponent/Header";
 
@@ -23,6 +25,20 @@ function App() {
           path="/inventory/:id" element={
             <RequireAuth>
               <Inventory />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addproduct" element={
+            <RequireAuth>
+              <AddProduct />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/myProducts" element={
+            <RequireAuth>
+              <MyProducts />
             </RequireAuth>
           }
         ></Route>

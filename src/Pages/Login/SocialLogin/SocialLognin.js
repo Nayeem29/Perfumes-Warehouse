@@ -11,7 +11,7 @@ const SocialLognin = () => {
   let from = location.state?.from?.pathname || "/";
   let errorELem;
   if (user) {
-    navigate(from, { replace: true || '/' });
+    navigate(from, { replace: true });
   }
   if (loading) {
     <Spinner />

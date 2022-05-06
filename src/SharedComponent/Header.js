@@ -12,12 +12,17 @@ import { FaBars } from "react-icons/fa";
 const Header = () => {
   const routes = [
     { id: 1, name: 'Home', link: '/' },
-    { id: 1, name: 'Blogs', link: '/blogs' },
-    { id: 1, name: 'About', link: '/about' }
+    { id: 2, name: 'Blogs', link: '/blogs' },
+    { id: 3, name: 'About', link: '/about' }
+  ];
+  const userRoutes = [
+    { id: 4, name: 'Manage', link: '/manageInventory' },
+    { id: 5, name: 'My Products', link: '/myProducts' },
+    { id: 6, name: 'Add Product', link: '/myProducts' },
   ];
   const navLinkStyles = ({ isActive }) => {
     return {
-      color: isActive ? 'pink' : 'black',
+      // backgroundColor: isActive ? 'pink' : 'white',
       fontSize: isActive ? '20px' : '20px',
       fontWeight: isActive ? 'bold' : 'normal'
     }
@@ -33,10 +38,10 @@ const Header = () => {
     return <Spinner />
   }
   return (
-    <div className={`mb-4 sticky top-0 z-10 bg-white ${open ? 'h-48' : 'h-14'}`}>
+    <div className={` sticky top-0 z-10 bg-gray-100 ${open ? 'h-48' : 'h-14'}`}>
       <nav className='flex items-center justify-between'>
         <div>
-          <p className='text-3xl font-semibold uppercase my-auto text-pink-400 ml-4'>Simplex Perfumer</p>
+          <p className='text-3xl font-semibold uppercase my-auto ml-4'>Simplex Perfumer</p>
         </div>
         <div>
           <nav className='md:flex items-center md:justify-end py-4 md:px-10 px-7'>
@@ -44,12 +49,18 @@ const Header = () => {
               {
                 routes.map(route =>
                   <li className='mr-8'>
-                    <NavLink style={navLinkStyles} key={route.id} to={route.link}>{route.name}</NavLink>
+                    <NavLink className='px-2' style={navLinkStyles} key={route.id} to={route.link}>{route.name}</NavLink>
                   </li>
                 )
               }
               {
                 user ?
+                  userRoutes.map(route =>
+                    <li className='mr-4'>
+                      <NavLink className='px-2' style={navLinkStyles} key={route.id} to={route.link}>{route.name}</NavLink>
+                    </li>
+                  )
+                  &&
                   <button className='px-5' onClick={logout}><FaSignOutAlt className='text-xl' /></button>
                   :
                   <NavLink style={navLinkStyles} className='px-5' to='/login'><FaSignInAlt className='text-xl text-black inline' /></NavLink>

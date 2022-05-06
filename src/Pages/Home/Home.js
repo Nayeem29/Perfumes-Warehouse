@@ -27,15 +27,15 @@ const Home = () => {
           ></Perfume>)
         }
       </section>
-      <div className='my-12'>
+      <div className='my-28'>
         <button
           onClick={() => navigate('/manageInventory')}
-          className='w-1/3 text-2xl block mx-auto font-bold rounded-2xl bg-pink-300 py-3 text-black shadow-green-300 hover:bg-green-200'>Manage Inventory</button>
+          className='w-1/4 text-xl block mx-auto rounded-lg font-bold bg-green-300 py-3 px-3 text-black shadow-green-300 hover:text-white'>Manage Inventory</button>
       </div>
       <section>
         <Support />
       </section>
-      <div className='sm:my-8 md:flex md:items-center md:justify-center mb-12 bg-green-200 py-12'>
+      <div className='sm:my-8 md:flex md:items-center md:justify-center mb-12 bg-green-100 py-12'>
         <p className='my-4 text-2xl font-bold mx-8'>Sign Up to Newsletter</p>
         <p className='sm:my-8 text-2xl font-bold mx-8 md:my-auto'><small className='text-sm font-thin'>get latest information on Events, Sales and Offers</small> <br />
           Receive $10 coupon for 10+ order

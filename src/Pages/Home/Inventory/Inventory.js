@@ -43,8 +43,9 @@ const Inventory = () => {
   const handleStockForm = (e) => {
     e.preventDefault();
     const stock = e.target.stock.value;
-    quantity = parseInt(stock);
+    quantity = parseInt(stock) + quantity;
     handleStockQuantity(quantity);
+    e.target.reset();
     toast('Restock has been processed!!');
   }
 
