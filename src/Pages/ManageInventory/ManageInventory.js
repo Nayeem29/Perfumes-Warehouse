@@ -13,6 +13,10 @@ const ManageInventory = () => {
     navigate('/addproduct');
   }
 
+  const handleUpdateBtn = (id) => {
+    navigate(`/inventory/${id}`);
+  }
+
   const handleRemoveBtn = (id) => {
     const proceed = window.confirm('Do you confirm to delete this?');
     if (proceed) {
@@ -41,7 +45,7 @@ const ManageInventory = () => {
               products.map(product =>
                 <TabularProducts
                   key={product._id} product={product}
-
+                  handleUpdateBtn={handleUpdateBtn}
                   handleRemoveBtn={handleRemoveBtn}
                 ></TabularProducts>
               )

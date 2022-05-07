@@ -49,24 +49,24 @@ const Register = () => {
       <div className='detail-form flex items-center justify-center'>
         <form onSubmit={handleSubmitForm}>
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="text" name='name' placeholder='Your Name' size='60' required
+            type="text" name='name' placeholder='Your Name' size='40' required
           />
           <br />
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="email" name='email' placeholder='Your Email' size='60' required
+            type="email" name='email' placeholder='Your Email' size='40' required
           />
           <br />
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="text" name='address' placeholder='Address' size='60' required
+            type="text" name='address' placeholder='Address' size='40' required
           />
           <br />
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="password" name='password' placeholder='Password' size='60' required
+            type="password" name='password' placeholder='Password' size='40' required
           />
           <br />
 
           <input className='my-3 px-4 py-2 border-green-200 border-2'
-            type="password" name='confirmPassword' placeholder='Confirm Password' size='60' required
+            type="password" name='confirmPassword' placeholder='Confirm Password' size='40' required
           />
           <br />
           <input type="checkbox" name="terms" id="terms"

@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import AddProduct from "./Pages/AddProduct/AddProduct";
+import Blogs from "./Pages/Blogs/Blogs";
 import Home from "./Pages/Home/Home";
 import Inventory from "./Pages/Home/Inventory/Inventory";
 import Login from "./Pages/Login/Login";
@@ -43,6 +44,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<NotFound />}></Route>

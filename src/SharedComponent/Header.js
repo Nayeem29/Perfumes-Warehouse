@@ -25,6 +25,8 @@ const Header = () => {
     return {
       fontSize: isActive ? '20px' : '20px',
       textDecoration: isActive ? 'underline' : 'none',
+      textDecorationColor: isActive ? '#FF69B4' : 'none',
+      textUnderlineOffset: isActive ? '4px' : 'none',
       fontWeight: isActive ? 'bold' : 'normal'
     }
   }
@@ -42,7 +44,7 @@ const Header = () => {
     <div className={` sticky top-0 z-10 bg-gray-100 ${open ? 'h-40' : 'h-14'} ${open && user ? 'h-60' : 'h-14'}`} >
       <nav className='flex items-center justify-between'>
         <div>
-          <p className='text-3xl font-semibold uppercase my-auto ml-4'>Simplex Perfumer</p>
+          <p className='sm:text-xl md:text-3xl font-semibold uppercase my-auto ml-4'>Perfumers Warehouse</p>
         </div>
         <div>
           <nav className='md:flex items-center md:justify-end py-4 md:px-10 px-7'>

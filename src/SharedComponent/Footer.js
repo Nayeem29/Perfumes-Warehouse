@@ -8,6 +8,7 @@ import { FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <div>
+      <hr className='h-2 w-full mt-20' />
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-20 mt-28'>
         <div className="categories">
           <p className='text-xl font-bold'>Categories</p>
