@@ -79,7 +79,7 @@ const Register = () => {
           {
             error && errorElem
           }
-          <ToastContainer />
+
           <button disabled={!agree}
             className='bg-green-200 text-xl font-bold px-4 rounded-sm my-5 cursor-pointer py-2 mx-auto block hover:bg-pink-300'>Registration</button>
           <SocialLognin />
@@ -91,6 +91,7 @@ const Register = () => {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

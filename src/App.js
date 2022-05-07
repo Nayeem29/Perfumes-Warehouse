@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import About from "./Pages/About/About";
 import AddProduct from "./Pages/AddProduct/AddProduct";
 import Blogs from "./Pages/Blogs/Blogs";
 import Home from "./Pages/Home/Home";
@@ -45,6 +46,7 @@ function App() {
           }
         ></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
+        <Route path="/about" element={<About />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<NotFound />}></Route>

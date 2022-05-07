@@ -14,7 +14,7 @@ const Perfume = ({ product, handleProductInventory }) => {
         <p className='py-2 text-sm font-light px-3'>{about.length > 200 ? about.slice(0, 200) + '...' : about}</p>
       </div>
       <button onClick={() => handleProductInventory(_id)}
-        className='text-center w-full rounded-b-xl py-3 bg-pink-300 text-black text-2xl font-semibold absolute bottom-0 hover:text-white'>DETAILS</button>
+        className='text-center w-full rounded-b-xl py-3 bg-pink-300 text-black text-2xl font-semibold absolute bottom-0 hover:text-white'>UPDATE</button>
     </div>
   );
 };

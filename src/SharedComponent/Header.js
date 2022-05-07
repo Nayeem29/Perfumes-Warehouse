@@ -14,7 +14,7 @@ const Header = () => {
   const routes = [
     { id: 1, name: 'Home', link: '/' },
     { id: 2, name: 'Blogs', link: '/blogs' },
-    { id: 3, name: 'About', link: '/about' }
+    { id: 3, name: 'Contact', link: '/about' }
   ];
   const userRoutes = [
     { id: 4, name: 'Manage', link: '/manageInventory' },

@@ -4,6 +4,7 @@ import TabularProducts from './TabularProducts/TabularProducts';
 import '../Home/Home.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 const ManageInventory = () => {
   const [products, setProducts] = useProducts();
 

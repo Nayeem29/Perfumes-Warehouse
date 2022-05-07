@@ -17,7 +17,7 @@ const TabularProducts = (props) => {
         <p>Stock: {quantity}</p>
       </div>
       <button onClick={() => handleUpdateBtn(_id)}
-        className='py-1 px-2 mx-auto block bg-pink-300 text-black sm:text-xl md:text-2xl font-semibold hover:text-white'>DETAILS</button>
+        className='py-1 px-2 mx-auto block bg-pink-300 text-black sm:text-xl md:text-2xl font-semibold hover:text-white'>UPDATE</button>
 
       <button onClick={() => handleRemoveBtn(_id)}
         className='ml-auto text-red-600'>

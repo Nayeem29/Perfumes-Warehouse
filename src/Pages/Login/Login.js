@@ -37,7 +37,6 @@ const Login = () => {
   if (error) {
     errorElem =
       <p className='text-red-400'>Error:{error.message}</p>
-
   }
   const handleResetPassword = async (e) => {
     e.preventDefault();
@@ -69,7 +68,7 @@ const Login = () => {
             <button
               onClick={handleResetPassword}
             >Reset</button></p>
-          <ToastContainer />
+
           {
             error && errorElem
           }
@@ -85,6 +84,7 @@ const Login = () => {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
