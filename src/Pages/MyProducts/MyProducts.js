@@ -16,7 +16,7 @@ const MyProducts = () => {
   const handleRemoveItem = (id) => {
     const proceed = window.confirm('Do you confirm to delete this?');
     if (proceed) {
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://sleepy-harbor-51437.herokuapp.com/products/${id}`;
       fetch(url, {
         method: 'DELETE'
       })

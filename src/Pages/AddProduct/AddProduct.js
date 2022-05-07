@@ -29,7 +29,7 @@ const AddProduct = () => {
     }
     console.log(perfume);
     e.target.reset();
-    fetch('http://localhost:5000/products/', {
+    fetch('https://sleepy-harbor-51437.herokuapp.com/products/', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

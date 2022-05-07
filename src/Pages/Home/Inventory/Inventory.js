@@ -7,7 +7,7 @@ const Inventory = () => {
   let [product, setProduct] = useState({})
   // console.log(id);
   useEffect(() => {
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://sleepy-harbor-51437.herokuapp.com/products/${id}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setProduct(data))
@@ -16,7 +16,7 @@ const Inventory = () => {
 
   const handleStockQuantity = (quantity) => {
     product = { quantity };
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://sleepy-harbor-51437.herokuapp.com/products/${id}`;
     fetch(url, {
       method: 'PUT',
       headers: {
