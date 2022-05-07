@@ -45,7 +45,7 @@ const ManageInventory = () => {
             {
               products.map(product =>
                 <TabularProducts
-                  key={product._id} product={product}
+                  key={uuidv4()} product={product}
                   handleUpdateBtn={handleUpdateBtn}
                   handleRemoveBtn={handleRemoveBtn}
                 ></TabularProducts>

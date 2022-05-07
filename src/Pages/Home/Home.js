@@ -30,7 +30,7 @@ const Home = () => {
       <div className='my-28'>
         <button
           onClick={() => navigate('/manageInventory')}
-          className='w-1/4 text-xl block mx-auto rounded-lg font-bold bg-green-300 py-3 px-3 text-black shadow-green-300 hover:text-white'>Manage Inventory</button>
+          className='sm:w-auto md:w-1/4 sm:text-sm md:text-xl block mx-auto rounded-lg font-bold bg-green-300 py-3 px-3 text-black shadow-green-300 hover:text-white'>Manage Inventory</button>
       </div>
       <section>
         <Support />
@@ -41,7 +41,8 @@ const Home = () => {
           Receive $10 coupon for 10+ order
         </p>
         <div className='relative subscriber my-8 md:my-auto'>
-          <input className='rounded-3xl ml-5 px-6 py-2 border-pink-300' type="text" placeholder='Email' size='40' />
+          <input className='rounded-3xl ml-5 px-6 py-2 border-pink-300' type="text" placeholder='Email' size='40'
+          />
           <button className='absolute right-0 font-bold bg-pink-300 h-full rounded-r-3xl px-5'>Subscribe</button>
         </div>
       </div>

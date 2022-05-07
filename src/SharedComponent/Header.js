@@ -19,7 +19,7 @@ const Header = () => {
   const userRoutes = [
     { id: 4, name: 'Manage', link: '/manageInventory' },
     { id: 5, name: 'My Products', link: '/myProducts' },
-    { id: 6, name: 'Add Product', link: '/myProducts' },
+    { id: 6, name: 'Add Product', link: '/addproduct' },
   ];
   const navLinkStyles = ({ isActive }) => {
     return {
