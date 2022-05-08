@@ -66,7 +66,12 @@ const Inventory = () => {
                 <hr />
                 <p className='py-2 my-3'>Supplier: {supplier}</p>
                 <hr />
-                <p className='py-2 my-3'>Available: {quantity}</p>
+                {
+                  (quantity > 0) ?
+                    <p className='py-2 my-3'>Available: {quantity}</p>
+                    :
+                    <p className='py-2 my-3'>Sold Out</p>
+                }
                 <button onClick={() => handleQuantity()}
                   className='text-center px-10 py-3 my-3 bg-pink-300 text-black text-2xl font-semibold'>
                   DELIVERED

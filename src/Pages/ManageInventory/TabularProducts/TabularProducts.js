@@ -13,9 +13,16 @@ const TabularProducts = (props) => {
         <p>{name}</p>
         <p>{price}</p>
       </div>
-      <div className='md:mx-8 px-2 text-base md:text-2xl font-semibold'>
-        <p>Stock: {quantity}</p>
-      </div>
+      {
+        quantity > 0 ?
+          <div className='md:mx-8 px-2 text-base md:text-2xl font-semibold'>
+            <p>Stock: {quantity}</p>
+          </div>
+          :
+          <div className='md:mx-8 px-2 text-base md:text-2xl font-semibold'>
+            <p>Sold Out</p>
+          </div>
+      }
       <button onClick={() => handleUpdateBtn(_id)}
         className='py-1 px-2 mx-auto block bg-pink-300 text-black sm:text-xl md:text-2xl font-semibold hover:text-white'>UPDATE</button>
 
